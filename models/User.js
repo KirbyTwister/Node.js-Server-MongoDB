@@ -4,4 +4,5 @@ const schema = new Schema({
     name: { type:String, required: true },
     registerDate: { type: Date, default: Date.now }
 });
+schema.path('name').index({text: true});
 module.exports = model('User', schema);

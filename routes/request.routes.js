@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
         const limit = parseInt(req.query.limit) || 10;
         const requests = await Request.find()
             .skip(start)
-            .limit(limit)
+            .limit(limit);
         res.setHeader('Access-Control-Allow-Origin', '*');
        // console.log(requests)
         res.status(200).send(requests)
@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
     try {
          const requests = await Request.findById(req.params.id);
          res.setHeader('Access-Control-Allow-Origin', '*');
-         console.log(req.params)
+         console.log(req.params);
          res.status(200).send(requests)
     } catch (err) {
         throw new Error(err);
