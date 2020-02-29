@@ -8,3 +8,4 @@ const schema = new Schema({
     description:{ type: String, required: true}
 });
 module.exports = model('Request', schema);
+schema.path('request').index({text: true});
